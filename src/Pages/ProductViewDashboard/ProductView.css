@@ -1,0 +1,74 @@
+.container table tbody tr td:not(.img),
+.container table tbody tr th {
+    padding: 10px;
+    vertical-align: middle;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.container table tbody tr .delete {
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.container table tbody tr td .img {
+    width: 150px;
+    height: 150px;
+}
+
+.container table tbody tr td a h5 {
+    transition: .3s;
+
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+
+.container table tbody tr td a h5:hover {
+    color: #0d6efd;
+}
+
+@media (max-width:800px) {
+
+    .container table tbody tr td:nth-child(4),
+    .container table thead tr th:nth-child(4) {
+        display: none;
+    }
+}
+
+@media (max-width:600px) {
+
+    .container table tbody tr td:nth-child(2),
+    .container table thead tr th:nth-child(2) {
+        display: none;
+    }
+}
+
+.container table tbody tr td .count {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    width: 100px;
+    overflow: hidden;
+    margin: 0 auto;
+    border: 1px solid rgba(0, 0, 0, 0.533);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.container table tbody tr td .count button {
+    outline: none;
+    border: none;
+    background-color: #fff;
+    font-size: 28px;
+}
+
+.container table tbody tr td .count button:hover {
+    color: rgba(255, 0, 0, 0.277);
+}

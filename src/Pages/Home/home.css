@@ -1,0 +1,22 @@
+.head {
+    font-size: 30px;
+    font-weight: 700;
+    position: relative;
+    color: #0d6efd;
+}
+
+.head::after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    height: 4px;
+    width: 100px;
+    background: #aaa;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}

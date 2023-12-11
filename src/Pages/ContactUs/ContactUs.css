@@ -1,0 +1,61 @@
+.contact .container .homeLink {
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+}
+
+.contact .container .homeLink:hover {
+    color: #007aff;
+}
+
+.contact .container {
+    overflow: hidden;
+}
+
+.contact .container .row .contact-head {
+    color: #333e48;
+
+}
+
+.contact .container .row .contact-head .contact-title {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.contact .container .row p {
+    font-size: 14px;
+}
+
+.contact .container .row .contact-head .contact-title h2 {
+    padding-bottom: 10px;
+    font-size: 25px;
+    font-weight: 600;
+    display: inline-block;
+    position: relative;
+}
+
+.contact .container .row .contact-head .contact-title h2::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -8px;
+    right: 0;
+    left: 0;
+    background-color: #007aff;
+}
+
+.contact .container .row .contact-form .form-control {
+    border-radius: 25px;
+    padding: 15px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+}
+
+.contact .container .row .contact-form .form-control:focus {
+    box-shadow: none;
+}

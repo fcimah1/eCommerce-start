@@ -1,0 +1,8 @@
+.container .row .card {
+    border: none;
+}
+
+.container .row .card p {
+    font-size: 15px;
+    margin-top: 15px;
+}
