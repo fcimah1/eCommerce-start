@@ -47,19 +47,6 @@
       ]
     },
     {
-      "title": "hjbuhy",
-      "image": {},
-      "description": "ji",
-      "price": "2222",
-      "rating": "2",
-      "discountPercentage": "222",
-      "stock": "1333333311",
-      "brand": "3ww",
-      "category": "www",
-      "thumbnail": "blob:http://localhost:3000/ed492f40-edec-4c4c-8097-c2a14fb5d30e",
-      "id": 2
-    },
-    {
       "id": 3,
       "title": "Samsung Universe 9",
       "description": "Samsung's new variant which goes beyond Galaxy to the Universe",

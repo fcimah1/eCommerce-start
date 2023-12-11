@@ -66,7 +66,7 @@ export default function UpdateProduct() {
             <form className="container mt-5" onSubmit={(e) => handleUpdate(e)}>
                 <div className="mb-3">
                     <label htmlFor="inpTitle" className="form-label">Title</label>
-                    <input name="title" value={product.title} required
+                    <input name="title" defaultValue={product.title} required
                         type="text" className="form-control" id="inpTitle" />
                 </div>
                 <div className="mb-3">
@@ -93,17 +93,17 @@ export default function UpdateProduct() {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="inpDescription" className="form-label">Description</label>
-                    <input name="description" value={product.description}
+                    <input name="description" defaultValue={product.description}
                         type="text" className="form-control" id="inpDescription" />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="inpPrice" className="form-label">Price</label>
-                    <input name="price" value={product.price} required
+                    <input name="price" defaultValue={product.price} required
                         type="number" className="form-control" id="inpPrice" />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="inpRating" className="form-label">Rating</label>
-                    <input name="rating" type="number" value={product.rating} required
+                    <input name="rating" type="number" defaultValue={product.rating} required
                         className="form-control" id="inpRating" />
                 </div>
                 <div className="mb-3">
@@ -118,12 +118,12 @@ export default function UpdateProduct() {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="inpBrand" className="form-label">Brand</label>
-                    <input name="brand" type="text" value={product.brand} required
+                    <input name="brand" type="text" defaultValue={product.brand} required
                         className="form-control" id="inpBrand" />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="inpCategory" className="form-label">Category</label>
-                    <input name="category" type="text" value={product.category} required
+                    <input name="category" type="text" defaultValue={product.category} required
                         className="form-control" id="inpCategory" />
                 </div>
                 {/* <div className="mb-3">
