@@ -1,4 +1,41 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 
+}
+
+body{
+  font-family: 'Open Sans', sans-serif;
+    background: #fafafa;
+    line-height: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.4;
+    font-size: 1em;
+    color: #777;
+}
+
+:root{
+  --primary-color:#08c;
+  --secondary-color:#777;
+  --black--color:#000;
+  --red-color:red;
+  --white-color:#fff;
+  --light-color:#f4f4f4;
+  --dark-color:#333;
+  --gray-color:#ccc;
+  --green-color:green;
+  --blue-color:blue;
+
+}
+
+.container{
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 2%;
+}
 img {
   width: 100%;
 }

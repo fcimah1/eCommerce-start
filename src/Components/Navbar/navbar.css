@@ -1,10 +1,49 @@
+nav {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--primary-color);
+}
+
+nav .linkes {
+    text-align: left;
+    /* background-color: var(--light-color); */
+    width: 100%;
+}
+
+.fixed {
+    position: fixed;
+    top: 0px;
+    padding: 10px 20px;
+    background-color: var(--light-color);
+    z-index: 999;
+    margin: 0;
+}
+
+.d-none {
+    display: none;
+}
+
 nav .container ul li {
-    font-size: 18px;
+    font-size: 20px;
 }
 
 nav .container ul li a.active {
-    color: black !important;
-    font-weight: 400;
+    color: black;
+    font-weight: 500;
+}
+
+nav .container ul li a {
+    padding: 10px;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+}
+
+nav .container ul li a:hover {
+    color: var(--blue-color);
 }
 
 nav .container .cart a {
@@ -14,6 +53,7 @@ nav .container .cart a {
     font-size: 2.3rem;
     margin-left: 20px;
 }
+
 
 nav .container .search {
     padding: 8px 30px;
