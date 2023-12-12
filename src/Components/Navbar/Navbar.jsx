@@ -1,3 +1,7 @@
+import { BsSearch } from "react-icons/bs"; 
+import { AiOutlineHeart } from "react-icons/ai";
+import { CiUser } from "react-icons/ci";
+import { BsTelephone } from "react-icons/bs";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Link, NavLink } from "react-router-dom";
 import { useRef, useState } from "react";
@@ -24,25 +28,42 @@ export default function Navbar() {
     return (
         <>
             <nav className="navbar navbar-expand-lg">
-                <div className="container up-nav">
+                <div className="container d-flex align-items-center up-nav">
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
 
                     <Link className="navbar-brand text-white fw-bold fs-3" to="/">SOUQ.COM</Link>
-                    <div className="d-flex" role="search">
+                    <div className=" search d-flex" role="search">
                         <input ref={inpText} className="form-control me-2" onChange={() => {
                             setValue(inpText.current.value)
                         }} type="search" placeholder="Search" aria-label="Search" />
                         <Link to={(value !== "") ? `search/${inpText.current.value}`
-                            : null} className="btn btn-secondary search" type="submit">Search</Link>
+                            : null} className="primary-search" type="submit"><BsSearch /></Link>
                     </div>
-                    <div className="cart">
-                        <Link to="/cart" className="text-dark "
-                            onClick={console.log(cart)}>
-                            <AiOutlineShoppingCart />
-                            <p className="number-of-products">{cart.length}</p>
-                        </Link>
+                    <div className="calling d-flex align-items-center gap-2  text-white">
+                        <div className="telephone fs-4">
+                            <BsTelephone />
+                        </div>
+                        <div className="telephone-details fs-6 ">
+                            <h6 className="text-uppercase text-white m-0">calling now</h6>
+                            <span>0123456789</span>
+                        </div>
+                    </div>
+                    <div className="icons d-flex text-white gap-3 fs-2">
+                        <div className="account  ">
+                            <Link title="Account"><CiUser /></Link>
+                        </div>
+                        <div className="wishList">
+                            <Link title="WishList"><AiOutlineHeart /></Link>
+                        </div>
+                        <div className="cart">
+                            <Link to="/cart" className=" "
+                                onClick={console.log(cart)}>
+                                <AiOutlineShoppingCart />
+                                <p className="number-of-products">{cart.length}</p>
+                            </Link>
+                        </div>
                     </div>
                 </div>
                 <div className="container linkes">

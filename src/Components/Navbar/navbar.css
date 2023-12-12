@@ -48,24 +48,57 @@ nav .container ul li a:hover {
 
 nav .container .cart a {
     position: relative;
-    color: black;
     text-decoration: none;
-    font-size: 2.3rem;
-    margin-left: 20px;
 }
 
+nav .container .form-control {
+    width: 400px;
+    padding: 5px 20px;
+    font-size: 14px;
+    height: 33px;
+    margin-top: 5px;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+}
 
 nav .container .search {
     padding: 8px 30px;
     text-align: center;
+    position: relative;
 }
 
+nav .container .search .primary-search {
+    position: absolute;
+    right: 55px;
+    top: 17px;
+}
+
+nav .container .search .primary-search::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -10px;
+    width: 1px;
+    height: 32px;
+    background-color: var(--gray-color);
+}
+
+/* 
 nav .container .search:hover {
     background-color: #444;
-}
+} */
 
 nav .container .search::before {
     background-color: #444;
+}
+
+nav .container .calling .telephone-details h6 {
+    font-size: 11px;
+    line-height: 10px;
+    padding-top: 5px;
 }
 
 nav .container .cart .number-of-products {
