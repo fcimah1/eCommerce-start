@@ -24,17 +24,15 @@ nav .linkes {
     display: none;
 }
 
-nav .container ul li {
-    font-size: 20px;
-}
-
 nav .container ul li a.active {
     color: black;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 nav .container ul li a {
-    padding: 10px;
+    line-height: 1px;
+    font-weight: 600;
+    padding: 30px 10px 10px 10px;
     transition: all .3s ease-in-out;
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
@@ -53,7 +51,7 @@ nav .container .cart a {
 
 nav .container .form-control {
     width: 400px;
-    padding: 5px 20px;
+    padding: 5px 50px 5px 20px;
     font-size: 14px;
     height: 33px;
     margin-top: 5px;
