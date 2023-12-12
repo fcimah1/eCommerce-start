@@ -13,7 +13,7 @@ export default function Navbar() {
 
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
-        if (scroll > 400) {
+        if (scroll > 180) {
             $('nav .linkes').addClass('fixed');
             $('nav .linkes .cart').removeClass('d-none');
         } else {
@@ -49,6 +49,9 @@ export default function Navbar() {
                     <div className="collapse navbar-collapse  align-items-center" id="navbarSupportedContent">
                         <ul className="navbar-nav  mb-2">
                             <li className="nav-item">
+                                <NavLink className="nav-link" to="/products">Dashboard</NavLink>
+                            </li>
+                            <li className="nav-item">
                                 <NavLink className="nav-link" to="/">Home</NavLink>
                             </li>
                             <li className="nav-item ">
@@ -69,7 +72,7 @@ export default function Navbar() {
 
                         </ul>
                     </div>
-                    <div className="cart">
+                    <div className="cart d-none">
                         <Link to="/cart" className="text-dark "
                             onClick={console.log(cart)}>
                             <AiOutlineShoppingCart />
