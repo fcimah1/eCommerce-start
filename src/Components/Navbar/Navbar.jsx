@@ -1,4 +1,4 @@
-import { BsSearch } from "react-icons/bs"; 
+import { BsSearch } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
 import { CiUser } from "react-icons/ci";
 import { BsTelephone } from "react-icons/bs";
@@ -94,7 +94,7 @@ export default function Navbar() {
                         </ul>
                     </div>
                     <div className="cart d-none">
-                        <Link to="/cart" className="text-dark "
+                        <Link to="/cart" className="text-dark fs-3 pt-1 ps-1 "
                             onClick={console.log(cart)}>
                             <AiOutlineShoppingCart />
                             <p className="number-of-products">{cart.length}</p>
