@@ -8,7 +8,7 @@ export default function TopRated() {
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
-    console.log(product);
+    // console.log(product);
     return (
         <>
             <div className="container my-5">

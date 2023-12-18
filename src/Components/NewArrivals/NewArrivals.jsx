@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 export default function NewArrivals() {
     const [product, setProduct] = useState([])
     useEffect(() => {
-        fetch('https://dummyjson.com/products')
+        fetch('http://localhost:9000/products')
             .then(res => res.json())
-            .then(data => setProduct(data.products))
+            .then(data => setProduct(data))
     }, [])
     return (
         <>

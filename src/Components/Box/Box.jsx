@@ -37,17 +37,16 @@ export default function Box({ id, img, title, desc, price }) {
             let cunrrentProduct = cartValues[i]
             if (check === 1) {
                 setCart([...cart.slice(0, i), { ...cunrrentProduct, countity: +cunrrentProduct.countity + 1 }, ...cart.slice(i + 1)])
-                localStorage.setItem("cart", { cart });
             } else {
                 operationAdd()
-                localStorage.setItem("cart", { cart });
             }
         } else {
             operationAdd()
-            localStorage.setItem("cart", { cart });
-
         }
     }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
     return (
         <div className="card">
             < ToastContainer />

@@ -15,9 +15,9 @@ import React, { useEffect, useState } from 'react'
 export default function SwipperSlides() {
     const [product, setProduct] = useState([])
     useEffect(() => {
-        fetch('https://dummyjson.com/products')
+        fetch('http://localhost:9000/products')
             .then(res => res.json())
-            .then(data => setProduct(data.products))
+            .then(data => setProduct(data))
     }, [])
     return (
         <>
@@ -44,11 +44,12 @@ export default function SwipperSlides() {
                 {
                     product?.map((product, index) => {
                         if (index < 10) {
-                            return(
-                            <SwiperSlide key={product.id}>
-                                <img src={product.thumbnail} alt={product.title} />
-                            </SwiperSlide>
-                    )} return null
+                            return (
+                                <SwiperSlide key={product.id}>
+                                    <img src={product.thumbnail} alt={product.title} />
+                                </SwiperSlide>
+                            )
+                        } return null
                     })
                 }
             </Swiper>

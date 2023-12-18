@@ -93,8 +93,8 @@ export default function UpdateProduct() {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="inpDescription" className="form-label">Description</label>
-                    <input name="description" defaultValue={product.description}
-                        type="text" className="form-control" id="inpDescription" />
+                    <textarea name="description" defaultValue={product.description}
+                        type="text" className="form-control" id="inpDescription" rows={3} cols={4}></textarea>
                 </div>
                 <div className="mb-3">
                     <label htmlFor="inpPrice" className="form-label">Price</label>

@@ -48,8 +48,8 @@ export default function AddProduct() {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="inpDescription" className="form-label">Description</label>
-                    <input name="description" type="text" required
-                        className="form-control" id="inpDescription" />
+                    <textarea name="description" type="text" required
+                        className="form-control" id="inpDescription" rows={3} cols={4}></textarea>
                 </div>
                 <div className="mb-3">
                     <label htmlFor="inpPrice" className="form-label">Price</label>

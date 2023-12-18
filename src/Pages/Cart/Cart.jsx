@@ -34,11 +34,10 @@ export default function Cart({ id, img, title, desc, price }) {
             if (check === 1) {
                 if (operation === "+") {
                     setCart([...cart.slice(0, i), { ...cunrrentProduct, countity: +cunrrentProduct.countity + 1 }, ...cart.slice(i + 1)])
-                    localStorage.setItem("cart", cart);
-                } else if (operation === "-" && cartValues[i].countity > 1) {
-                    setCart([...cart.slice(0, i), { ...cunrrentProduct, countity: +cunrrentProduct.countity - 1 }, ...cart.slice(i + 1)])
-                    localStorage.setItem("cart", cart);
+                }
 
+                else if (operation === "-" && cartValues[i].countity > 1) {
+                    setCart([...cart.slice(0, i), { ...cunrrentProduct, countity: +cunrrentProduct.countity - 1 }, ...cart.slice(i + 1)])
                 }
             } else {
                 operationAdd()
@@ -50,8 +49,8 @@ export default function Cart({ id, img, title, desc, price }) {
 
     function operationDelete(index) {
         setCart([...cart.slice(0, index), ...cart.slice(index + 1)])
-        localStorage.setItem("cart", cart);
     }
+    localStorage.setItem("cart", JSON.stringify(cart));
 
     return (
         <>
@@ -93,7 +92,9 @@ export default function Cart({ id, img, title, desc, price }) {
                                         <td>${product.price}</td>
                                         <td >
                                             <div className="count">
-                                                <button onClick={() => { operationOfCount(product.id, "-") }}>- </button>
+                                                <button onClick={() => {
+                                                    operationOfCount(product.id, "-")
+                                                }}>- </button>
                                                 <span className="" > {product.countity} </span>
                                                 <button onClick={() => operationOfCount(product.id, "+")}> +</button>
                                             </div>
