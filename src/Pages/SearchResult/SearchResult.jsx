@@ -6,9 +6,9 @@ export default function SearchResult() {
     const { value } = useParams()
     const [data, setData] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:3000/products/search?q=${value}`)
+        fetch(`http://localhost:9000/products/search?q=${value}`)
             .then(res => res.json())
-            .then(productData => setData(productData.products));
+            .then(productData => setData(productData));
     }, [value])
     return (
         <>

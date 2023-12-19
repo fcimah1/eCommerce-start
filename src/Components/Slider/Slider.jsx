@@ -10,7 +10,6 @@ export default function Slider() {
             <div className="container-fluid ">
                 <div className="row">
                     <div className="col-md-3 hide p-0">
-                        <h6 className=" bg-light text-center  py-3 fs-6">TOP CATEGORIES</h6>
                         <ul className="category-list">
                             <Categories />
                         </ul>

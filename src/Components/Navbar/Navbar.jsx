@@ -10,11 +10,13 @@ import cartDetaials from "../../Atoms/Cart.atom";
 import logo from "../../images/logo_ecomwhite_lg.png"
 import $ from 'jquery';
 import './navbar.css'
+import wishListDetaials from "../../Atoms/wishlist.atom";
 
 export default function Navbar() {
     const inpText = useRef()
     const [value, setValue] = useState("")
     const cart = useRecoilValue(cartDetaials)
+    const wishValues = useRecoilValue(wishListDetaials)
 
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
@@ -34,7 +36,7 @@ export default function Navbar() {
                         <span className="navbar-toggler-icon"></span>
                     </button>
 
-                    <Link className="navbar-brand text-white ms-md-auto" to="/">
+                    <Link className="navbar-brand text-white" to="/">
                         <img src={logo} alt="logo" height="44" width="111" />
                     </Link>
                     <div className="search-part search d-flex" role="search">
@@ -64,8 +66,9 @@ export default function Navbar() {
                         <div className="account  ">
                             <Link title="Account"><CiUser /></Link>
                         </div>
-                        <div className="wishList">
-                            <Link title="WishList"><AiOutlineHeart /></Link>
+                        <div className="cart wishList">
+                            <Link to="wishList" title="WishList"><AiOutlineHeart />
+                                <p className="number-of-products">{wishValues.length}</p></Link>
                         </div>
                         <div className="cart">
                             <Link to="/cart" className=" ">

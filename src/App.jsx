@@ -12,6 +12,7 @@ import SearchResult from './Pages/SearchResult/SearchResult';
 import DashboardOfProductView from './Pages/ProductViewDashboard/ProductView';
 import AddProduct from './Components/AddProduct/AddProduct';
 import UpdateProduct from './Components/UpdateProduct/UpdateProduct';
+import WishList from './Pages/WishList/WishList';
 
 
 
@@ -27,6 +28,7 @@ function App() {
         <Route path='cart' element={<Cart />} />
         <Route path='about' element={<AboutUs />} />
         <Route path='contact' element={<ContactUs />} />
+        <Route path='wishList' element={<WishList />} />
         <Route path='products' element={<Outlet />}>
           <Route path='' element={<DashboardOfProductView />} />
           <Route path='addProduct' element={<AddProduct />} />

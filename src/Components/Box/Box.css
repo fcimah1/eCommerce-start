@@ -4,6 +4,8 @@
 
 .card .img {
     height: 250px;
+    position: relative;
+
 }
 
 .card .img img {
@@ -12,8 +14,19 @@
     cursor: pointer;
 }
 
-.card .img {
-    position: relative;
+.card .img .wish-list {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    padding-top: 20px;
+    text-align: center;
+    font-weight: 600;
+    z-index: 3;
+    font-size: 20px;
+    transition: .5s;
+    cursor: pointer;
 }
 
 .card .img .addCart {
