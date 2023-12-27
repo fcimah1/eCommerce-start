@@ -1,0 +1,14 @@
+.card .card-body {
+    text-align: center;
+}
+
+.card .card-body div {
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card .card-body .btn-wish-list {
+    padding: 12px 8px;
+    font-size: 13px;
+}

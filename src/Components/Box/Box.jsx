@@ -7,6 +7,7 @@ import { ToastContainer } from 'react-toastify';
 import toast, { Toaster } from 'react-hot-toast';
 import wishListDetaials from "../../Atoms/wishlist.atom";
 
+
 const notify = () => toast.success('Added Succesfully.');
 export default function Box({ id, img, title, desc, price }) {
     const [cart, setCart] = useRecoilState(cartDetaials)
@@ -15,7 +16,7 @@ export default function Box({ id, img, title, desc, price }) {
     const wishValues = useRecoilValue(wishListDetaials)
 
 
-    let productDetails= {
+    let productDetails = {
         id,
         countity: 1,
         img,
@@ -38,10 +39,10 @@ export default function Box({ id, img, title, desc, price }) {
             if (check === 1) {
                 setCart([...cart.slice(0, i), { ...cunrrentProduct, countity: +cunrrentProduct.countity + 1 }, ...cart.slice(i + 1)])
             } else {
-                setCart([...cart,productDetails])
+                setCart([...cart, productDetails])
             }
         } else {
-            setCart([...cart,productDetails])
+            setCart([...cart, productDetails])
         }
     }
 
@@ -59,12 +60,18 @@ export default function Box({ id, img, title, desc, price }) {
             if (check === 1) {
                 setWish([...wish.slice(0, i), { ...cunrrentProduct, countity: +cunrrentProduct.countity + 1 }, ...wish.slice(i + 1)])
             } else {
-                setWish([...wish,productDetails])
+                setWish([...wish, productDetails])
             }
         } else {
-            setWish([...wish,productDetails])
+            setWish([...wish, productDetails])
         }
     }
+
+    let arrOfWishList = []
+    wishValues.map(prod =>  arrOfWishList.push(prod.id) )
+    console.log(arrOfWishList);
+
+
 
     localStorage.setItem("cart", JSON.stringify(cart));
     localStorage.setItem("wishList", JSON.stringify(wish));
@@ -76,8 +83,8 @@ export default function Box({ id, img, title, desc, price }) {
             <Toaster />
             <div className="img">
                 <img src={img} className="card-img-top" alt={title} />
-                <span className="wish-list">
-                    <Link to='wishList' onClick={() => {
+                <span className={`wish-list ${(arrOfWishList.includes(id) && ("red"))}`}>
+                    <Link to='/wishList' onClick={() => {
                         addToWishList(id)
                     }}><AiOutlineHeart /></Link>
                 </span>

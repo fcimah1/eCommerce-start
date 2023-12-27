@@ -23,9 +23,32 @@
       "postId": 1
     }
   ],
-  "profile": {
-    "name": "typicode"
-  },
+  "users": [
+    {
+      "id": 1,
+      "firstName": "mohamed",
+      "lastName": "ahmed",
+      "email": "eng.mohamedahmed2741991@gmail.com",
+      "password": "2222"
+    },
+    {
+      "firstName": "mohamed",
+      "lastName": "hassan",
+      "email": "fci_mah@yahoo.com",
+      "password": "11111111111",
+      "id": 2
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 3
+    },
+    {
+      "email": "eng.mohamedahmed2741991@gmail.com",
+      "password": "",
+      "id": 4
+    }
+  ],
   "products": [
     {
       "title": "iPhone 9",

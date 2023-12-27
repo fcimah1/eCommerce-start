@@ -1,0 +1,26 @@
+.container .row .menu-list ul {
+    /* margin: 30px 30px; */
+    list-style: none;
+    padding: 0;
+}
+
+.container .row .menu-list ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.container .row .menu-list ul li a {
+    font-size: 16px;
+    font-weight: 400;
+    transition: .4s all ease;
+    -webkit-transition: .4s all ease;
+    -moz-transition: .4s all ease;
+    -ms-transition: .4s all ease;
+    -o-transition: .4s all ease;
+}
+
+.container .row .menu-list ul li a:hover,
+.container .row .menu-list ul li a.active {
+    color: #0d6efd;
+
+}

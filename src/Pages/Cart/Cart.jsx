@@ -9,16 +9,15 @@ export default function Cart({ id, img, title, desc, price }) {
     const cartValues = useRecoilValue(cartDetaials)
     const [cart, setCart] = useRecoilState(cartDetaials)
 
-    function operationAdd() {
-        setCart([...cart, {
-            id,
-            countity: 1,
-            img,
-            title,
-            desc,
-            price
-        }])
+    let productDetails = {
+        id,
+        countity: 1,
+        img,
+        title,
+        desc,
+        price
     }
+
 
     function operationOfCount(id, operation) {
         let check = 0
@@ -40,10 +39,10 @@ export default function Cart({ id, img, title, desc, price }) {
                     setCart([...cart.slice(0, i), { ...cunrrentProduct, countity: +cunrrentProduct.countity - 1 }, ...cart.slice(i + 1)])
                 }
             } else {
-                operationAdd()
+                setCart([...cart, productDetails])
             }
         } else {
-            operationAdd()
+            setCart([...cart, productDetails])
         }
     }
 

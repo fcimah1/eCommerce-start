@@ -11,12 +11,14 @@ import logo from "../../images/logo_ecomwhite_lg.png"
 import $ from 'jquery';
 import './navbar.css'
 import wishListDetaials from "../../Atoms/wishlist.atom";
+import login from "../../Atoms/login.atom";
 
 export default function Navbar() {
     const inpText = useRef()
     const [value, setValue] = useState("")
     const cart = useRecoilValue(cartDetaials)
     const wishValues = useRecoilValue(wishListDetaials)
+    const loginState = useRecoilValue(login)
 
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
@@ -64,8 +66,13 @@ export default function Navbar() {
                                 }}><BsSearch /></Link>
                         </div>
                         <div className="account  ">
-                            <Link title="Account"><CiUser /></Link>
+                            {
+                                loginState ?
+                                    <span>welcome</span> :
+                                    <Link to="/auth" title="Account"><CiUser /></Link>
+                            }
                         </div>
+
                         <div className="cart wishList">
                             <Link to="wishList" title="WishList"><AiOutlineHeart />
                                 <p className="number-of-products">{wishValues.length}</p></Link>
