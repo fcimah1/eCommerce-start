@@ -1,5 +1,5 @@
 import { atom } from "recoil";
-let initialValue = []
+let initialValue = false
 if (localStorage.getItem("login")) {
     initialValue = JSON.parse(localStorage.getItem("login"))
 }

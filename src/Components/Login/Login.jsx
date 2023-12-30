@@ -9,9 +9,29 @@ export default function Login() {
 
     const email = useRef()
     const password = useRef()
-
     const [loginState, setLoginState] = useRecoilState(login)
 
+    async function getUserInfo(input) {
+        let config = {
+            method: 'get',
+            maxBodyLength: Infinity,
+            url: `https://api.escuelajs.co/api/v1/users/`,
+            headers: {}
+        };
+        try {
+            const response = await axios.request(config);
+            await response.data.find(item => {
+                if (item.email === input) {
+                    localStorage.setItem("userDetails", JSON.stringify(item))
+                }
+                return null
+            })
+
+        }
+        catch (error) {
+            console.log(error.response.data);
+        }
+    }
 
     async function handleSubmit(e) {
         e.preventDefault()
@@ -23,27 +43,27 @@ export default function Login() {
 
         try {
             const response = await axios.post(url, body);
-            console.log(response.data);
+            console.log(response);
             toast.success("login successfully")
             setLoginState(true)
-            localStorage.setItem("user", JSON.stringify(response.data.user))
+            getUserInfo(email.current.value)
             localStorage.setItem("token", response.data.access_token)
             localStorage.setItem("login", loginState)
 
         } catch (error) {
-            console.error(error);
+            toast.error(error);
         }
     }
     return (
         <>
-            <Toaster
-                position='bottom-center' />
+            <Toaster position='bottom-center' />
             <div className="head-text pt-4 pb-5 text-center">
                 <h1 className="text-capitalize">customer login</h1>
             </div>
             <div className="container">
-
-                <form onSubmit={(e) => { handleSubmit(e) }} className="contact-form   needs-validation">
+                <form onSubmit={(e) => {
+                    handleSubmit(e)
+                }} className="contact-form   needs-validation">
                     <div className="row mt-5 justify-content-center">
 
                         <div className="col-sm-12 col-md-6 ">

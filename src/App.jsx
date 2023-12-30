@@ -14,10 +14,16 @@ import AddProduct from './Components/AddProduct/AddProduct';
 import UpdateProduct from './Components/UpdateProduct/UpdateProduct';
 import WishList from './Pages/WishList/WishList';
 import Auth from './Pages/Auth/Auth';
+import { Logg } from './Components/PrivateRoutes/PrivateRoutes';
+import { useRecoilValue } from 'recoil';
+import login from './Atoms/login.atom';
 
 
 
 function App() {
+  const loginState = useRecoilValue(login)
+  console.log(loginState)
+
   return (
     <>
       <Navbar />
@@ -30,7 +36,9 @@ function App() {
         <Route path='about' element={<AboutUs />} />
         <Route path='contact' element={<ContactUs />} />
         <Route path='wishList' element={<WishList />} />
-        <Route path='auth' element={<Auth />} />
+        <Route element={<Logg logged={loginState} />}>
+          <Route path='/auth' element={<Auth />} />
+        </Route>
         <Route path='products' element={<Outlet />}>
           <Route path='' element={<DashboardOfProductView />} />
           <Route path='addProduct' element={<AddProduct />} />

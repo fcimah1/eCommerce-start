@@ -1,17 +1,48 @@
+import { MdDone } from "react-icons/md";
 import { TbMathGreater } from "react-icons/tb";
 import "./ContactUs.css"
-import {  Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import User from "../../Atoms/UserDetails.atom";
+import { useRecoilValue } from "recoil";
+import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
+import $ from 'jquery';
 export default function ContactUs() {
-    function handleMassage(e) {
-        // e.preventDefalut();
-        // let formData = await new FormData()
-        console.log(e);
+    const user = useRecoilValue(User)
+
+    function clearInputs() {
+        $("input").val("");
+        $("textarea").val("");
+    }
+
+    async function handleMassage(e) {
+        e.preventDefault();
+        let formData = new FormData(e.target)
+        formData.append("user-id", user.id)
+        let obj = Object.fromEntries(formData)
+        console.log(obj);
+        try {
+            const response = await axios.post("http://localhost:9000/messages", obj)
+            console.log(response.status);
+            if (response.status === 201) {
+                $(".contact .container .message").addClass("message-send")
+                $(".contact .container .message").removeClass("message-send-none")
+            }
+            clearInputs()
+        } catch (error) {
+            toast.error(error)
+        }
     }
     return (
         <>
+            <Toaster position='top-center' />
             <div className="contact mt-4">
                 <div className="container addr">
                     <p><Link className="homeLink" to="/">Home</Link>  <TbMathGreater />  Contact Us</p>
+                    <p className="message message-send-none"><MdDone className="me-2 true" />
+                        Thanks for contacting us with your comments and questions.
+                        We'll respond to you very soon.
+                    </p>
                 </div>
                 <div className="container my-5">
                     <div className="row">
@@ -29,12 +60,12 @@ export default function ContactUs() {
                                 <div className="mb-3" >
                                     <label htmlFor="nameInp" className="form-label">Name</label>
                                     <input type="text" name="name" className="form-control" id="nameInp"
-                                        placeholder="enter your name" />
+                                        placeholder="enter your name" required />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="emailInp" className="form-label">Email address</label>
                                     <input type="email" name="email" className="form-control " id="emailInp"
-                                        placeholder="name@example.com" />
+                                        placeholder="name@example.com" required />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="phoneInp" className="form-label">Phone Number</label>
@@ -43,9 +74,9 @@ export default function ContactUs() {
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="messageArea" className="form-label">Message*</label>
-                                    <textarea className="form-control" name="massage" id="messageArea" rows="3" ></textarea>
+                                    <textarea className="form-control" required name="massage" id="messageArea" rows="3" ></textarea>
                                 </div>
-                                <button type="button" className="btn-front btn-front-primary rounded-pill">Send Meeage</button>
+                                <button className="btn-front btn-front-primary rounded-pill">Send Meeage</button>
 
                             </form>
                         </div>

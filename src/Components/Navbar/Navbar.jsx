@@ -1,3 +1,6 @@
+import { AiOutlineTwitter } from "react-icons/ai";
+import { CgFacebook } from "react-icons/cg";
+import { BsInstagram } from "react-icons/bs";
 import { BsSearch } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
 import { CiUser } from "react-icons/ci";
@@ -5,20 +8,22 @@ import { BsTelephone } from "react-icons/bs";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Link, NavLink } from "react-router-dom";
 import { useRef, useState } from "react";
-import { useRecoilValue } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import cartDetaials from "../../Atoms/Cart.atom";
 import logo from "../../images/logo_ecomwhite_lg.png"
 import $ from 'jquery';
 import './navbar.css'
 import wishListDetaials from "../../Atoms/wishlist.atom";
 import login from "../../Atoms/login.atom";
+import User from "../../Atoms/UserDetails.atom";
 
 export default function Navbar() {
     const inpText = useRef()
     const [value, setValue] = useState("")
     const cart = useRecoilValue(cartDetaials)
     const wishValues = useRecoilValue(wishListDetaials)
-    const loginState = useRecoilValue(login)
+    const [loginState, setLoginState] = useRecoilState(login)
+    const user = useRecoilValue(User)
 
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
@@ -30,9 +35,81 @@ export default function Navbar() {
             $('nav .links .cart').addClass('d-none');
         }
     });
+
+    $(window).on("resize", function disappearLinks() {
+        $('nav .container .collapse').removeClass('appear');
+    });
+
+    function appearLinks() {
+        $('nav .container .collapse').toggleClass('appear');
+    }
     return (
         <>
             <nav className="navbar pb-0 navbar-expand-lg">
+                <div className="container ">
+                    <div className="left-side">
+                        <p className="text-uppercase text-white">
+                            FREE RETURNS. STANDARD SHIPPING ORDERS $99+
+                        </p>
+                    </div>
+                    <button className="navbar-toggler" type="button"
+                        onClick={() => {
+                            appearLinks()
+                        }}>
+                        <span >Links</span>
+                    </button>
+                    <div className="collapse navbar-collapse ms-5" id="">
+                        <ul className="navbar-nav align-items-center">
+                            <li className="nav-item">
+                                <p className="nav-link text-uppercase">
+                                    {
+                                        user ?
+                                            "DEFAULT WELCOME MSG!" :
+                                            `welcome, ${user?.name}`
+                                    }
+
+                                </p>
+                            </li>
+                            <li className="nav-item ">
+                                <Link className="nav-link " to="/blog">
+                                    Blog
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                {
+                                    loginState ?
+                                        <>
+                                            <Link className="nav-link" to="/"
+                                                onClick={() => {
+                                                    setLoginState(false)
+                                                    localStorage.setItem("login", false)
+                                                    localStorage.removeItem("userDetails")
+                                                }}>Sign Out</Link>
+                                        </> :
+                                        <>
+                                            <Link className="nav-link" to="/auth">Sign In</Link>
+                                        </>
+                                }
+                            </li>
+                            <li className="nav-item ">
+                                <Link className="nav-link " to="/contact">
+                                    Contact Us
+                                </Link>
+                            </li>
+                            <li className="nav-item d-flex ">
+                                <Link className="nav-link fs-6 icon facebook " to="/services">
+                                    <CgFacebook />
+                                </Link>
+                                <Link className="nav-link fs-6 icon twitter" to="/services">
+                                    <AiOutlineTwitter />
+                                </Link>
+                                <Link className="nav-link fs-6 icon instgram" to="/services">
+                                    <BsInstagram />
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
                 <div className="container d-flex pb-3 align-items-center up-nav w-100">
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -66,13 +143,8 @@ export default function Navbar() {
                                 }}><BsSearch /></Link>
                         </div>
                         <div className="account  ">
-                            {
-                                loginState ?
-                                    <span>welcome</span> :
-                                    <Link to="/auth" title="Account"><CiUser /></Link>
-                            }
+                            <Link to="/auth" title="Account"><CiUser /></Link>
                         </div>
-
                         <div className="cart wishList">
                             <Link to="wishList" title="WishList"><AiOutlineHeart />
                                 <p className="number-of-products">{wishValues.length}</p></Link>

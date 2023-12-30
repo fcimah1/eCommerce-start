@@ -24,6 +24,32 @@
     margin-bottom: 20px;
 }
 
+.contact .container .message-send-none {
+    display: none;
+}
+
+.contact .container .message-send {
+    margin: 0 0 0.5em;
+    padding: 12px 1em 12px 1.25em;
+    display: block;
+    font-size: 0.9rem;
+    background: #e5efe5;
+    color: #006400;
+    padding-left: 45px;
+}
+
+.contact .container .message .true {
+    /* padding: 10px; */
+    font-size: 22px !important;
+    background-color: green;
+    color: #fff !important;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
 .contact .container .row p {
     font-size: 14px;
 }

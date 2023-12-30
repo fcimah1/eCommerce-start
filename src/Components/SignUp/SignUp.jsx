@@ -56,7 +56,7 @@ export default function SignUp() {
             avatar: "https://picsum.photos/800"
         }
         const url = "https://api.escuelajs.co/api/v1/users/"
-        console.log(arrOfEmails[5]);
+        console.log(arrOfEmails);
         if (arrOfEmails.includes(email.current.value)) {
             toast.error("Email already exists")
             return null
@@ -81,7 +81,7 @@ export default function SignUp() {
             <div className="head-text pt-4 pb-5 text-center">
                 <h1 className="text-capitalize">create new customer account</h1>
             </div>
-            <div className="container">
+            <div className="container  overflow-hidden">
 
                 <form onSubmit={(e) => {
                     makeRequest();
