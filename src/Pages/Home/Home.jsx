@@ -5,6 +5,8 @@ import Box from '../../Components/Box/Box';
 import TopRated from '../../TopRated/TopRated';
 import NewArrivals from '../../Components/NewArrivals/NewArrivals';
 import SwipperSlides from '../../Components/SwipperSlides/SwipperSlides';
+import HomeBar from '../../Components/HomeBar/HomeBar';
+import Footer from '../../Components/Footer/Footer';
 
 export default function Home() {
     const [product, setProduct] = useState([])
@@ -16,6 +18,7 @@ export default function Home() {
     return (
         <>
             <Slider />
+            <HomeBar />
             <div className="container  pt-5 ">
                 <h2 className=" text-center head my-5 text-primary ">Important Products</h2>
                 <div className="row pt-5">
@@ -33,10 +36,10 @@ export default function Home() {
                     }
                 </div>
             </div>
+            <SwipperSlides />
             <TopRated />
             <NewArrivals />
-            <SwipperSlides />
-
+            <Footer />
         </>
     )
 }

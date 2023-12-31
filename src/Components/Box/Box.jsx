@@ -101,7 +101,7 @@ export default function Box({ id, img, title, desc, price }) {
                 <h5 className="card-title">{title}</h5>
                 <p className="card-text">price: ${price} </p>
                 <p className="card-text">{desc.split(" ").slice(1, 6).join(" ")}</p>
-                <div className='d-flex justify-content-between align-items-center'>
+                <div className='d-flex align-items-center'>
                     <Link to={`/productDetails/${id}`} className="btn-front">Show Details</Link>
                 </div>
             </div>

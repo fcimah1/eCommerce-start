@@ -1,0 +1,7 @@
+.container .row .img {
+    height: 300px;
+}
+
+.container .row .img img {
+    height: 100%;
+}

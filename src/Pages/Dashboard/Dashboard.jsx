@@ -1,11 +1,13 @@
+import Footer from "../../Components/Footer/Footer";
 
 export default function Dashboard() {
     return (
         <>
-            <NavBar/>
+            <NavBar />
             <section className="dashboard">
 
             </section>
+            <Footer />
         </>
     )
 }

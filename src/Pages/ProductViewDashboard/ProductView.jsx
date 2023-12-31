@@ -6,6 +6,7 @@ import { Link } from "react-router-dom"
 import { Toaster } from "react-hot-toast"
 import { useEffect, useState } from "react"
 import Swal from "sweetalert2";
+import Footer from "../../Components/Footer/Footer";
 export default function DashboardOfProductView() {
     const [product, setProduct] = useState([])
 
@@ -107,7 +108,7 @@ export default function DashboardOfProductView() {
                     </tbody>
                 </table>
             </div>
-
+            <Footer />
         </>
     )
 }

@@ -52,7 +52,7 @@ export default function Navbar() {
                             FREE RETURNS. STANDARD SHIPPING ORDERS $99+
                         </p>
                     </div>
-                    <button className="navbar-toggler" type="button"
+                    <button className="navbar-toggler text-white" type="button"
                         onClick={() => {
                             appearLinks()
                         }}>

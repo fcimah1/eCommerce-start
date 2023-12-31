@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import Box from "../../Components/Box/Box"
+import Footer from "../../Components/Footer/Footer"
 
 export default function SearchResult() {
     const { value } = useParams()
@@ -30,8 +31,7 @@ export default function SearchResult() {
                     <p className="text-center">No result found</p>
                 }
             </div>
-
-
+            <Footer />
         </>
     )
 }

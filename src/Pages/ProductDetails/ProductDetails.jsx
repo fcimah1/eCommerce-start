@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom"
 import { useRecoilState, useRecoilValue } from "recoil";
 import './productDetails.css'
 import cartDetaials from "../../Atoms/Cart.atom";
+import Footer from "../../Components/Footer/Footer";
 
 
 export default function ProductDetails({ id, img, title, desc, price }) {
@@ -89,6 +90,7 @@ export default function ProductDetails({ id, img, title, desc, price }) {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     )
 }

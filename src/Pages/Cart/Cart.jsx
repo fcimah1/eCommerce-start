@@ -3,6 +3,7 @@ import './cart.css'
 import { Link } from "react-router-dom"
 import toast, { Toaster } from "react-hot-toast"
 import cartDetaials from "../../Atoms/Cart.atom"
+import Footer from "../../Components/Footer/Footer"
 // import Swal from 'sweetalert2'
 
 export default function Cart({ id, img, title, desc, price }) {
@@ -106,6 +107,7 @@ export default function Cart({ id, img, title, desc, price }) {
                     </tbody>
                 </table>
             </div>
+            <Footer />
         </>
     )
 }

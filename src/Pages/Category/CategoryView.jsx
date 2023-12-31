@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import '../../Components/Categories/category.css'
 import "../Home/home.css"
 import Box from "../../Components/Box/Box";
+import Footer from "../../Components/Footer/Footer";
 
 
 export default function CategoryView() {
@@ -30,6 +31,7 @@ export default function CategoryView() {
                     }
                 </div>
             </div>
+            <Footer />
         </>
     )
 }

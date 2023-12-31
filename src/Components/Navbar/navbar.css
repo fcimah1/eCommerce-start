@@ -12,11 +12,8 @@ nav .container {
 
 .appear {
     position: absolute;
-    padding-top: 10px;
-    top: 40px;
+    top: 38px;
     right: 10px;
-    /* width: 200px;
-    height: 200px; */
     background-color: #fff;
     color: black !important;
     display: inline-block !important;
