@@ -7,7 +7,7 @@ import imgFooter from '../../images/shop2_payment_logo.png'
 
 export default function Footer() {
     return (
-        <footer className="bg-dark overflow-hidden ">
+        <footer className="bg-dark overflow-hidden mt-5">
             <div className="row border-bottom">
                 <div className=" col-lg-3 col-xl-3 col-12 mb-5">
                     <FooterContactInfo />

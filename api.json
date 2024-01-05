@@ -179,27 +179,22 @@
   ],
   "users": [
     {
-      "id": 1,
-      "firstName": "mohamed",
-      "lastName": "ahmed",
+      "image": {},
+      "password": "11111111",
       "email": "eng.mohamedahmed2741991@gmail.com",
-      "password": "2222"
-    },
-    {
-      "firstName": "mohamed",
-      "lastName": "hassan",
-      "email": "fci_mah@yahoo.com",
-      "password": "11111111111",
+      "role": "Admin",
+      "address": "",
+      "avatar": "https://picsum.photos/800",
+      "name": "mohamed Ahmed",
       "id": 2
     },
     {
-      "email": "",
-      "password": "",
-      "id": 3
-    },
-    {
-      "email": "eng.mohamedahmed2741991@gmail.com",
-      "password": "",
+      "password": "22222222",
+      "email": "fci_mah@yahoo.com",
+      "role": "admin",
+      "address": "beba",
+      "avatar": "blob:http://localhost:3000/c17945ee-8d5c-40eb-80cd-7958747e3287",
+      "name": "omar mohamed",
       "id": 4
     }
   ],
@@ -902,25 +897,6 @@
       "images": [
         "https://i.dummyjson.com/data/products/40/1.jpg",
         "https://i.dummyjson.com/data/products/40/2.jpg"
-      ]
-    },
-    {
-      "id": 41,
-      "title": "NIGHT SUIT",
-      "description": "NIGHT SUIT RED MICKY MOUSE..  For Girls. Fantastic Suits.",
-      "price": 55,
-      "discountPercentage": 15.05,
-      "rating": 4.65,
-      "stock": 21,
-      "brand": "RED MICKY MOUSE..",
-      "category": "womens-dresses",
-      "thumbnail": "https://i.dummyjson.com/data/products/41/thumbnail.webp",
-      "images": [
-        "https://i.dummyjson.com/data/products/41/1.jpg",
-        "https://i.dummyjson.com/data/products/41/2.webp",
-        "https://i.dummyjson.com/data/products/41/3.jpg",
-        "https://i.dummyjson.com/data/products/41/4.jpg",
-        "https://i.dummyjson.com/data/products/41/thumbnail.webp"
       ]
     },
     {

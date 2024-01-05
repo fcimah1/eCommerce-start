@@ -3,8 +3,7 @@ import { Link, useParams } from "react-router-dom"
 import { useRecoilState, useRecoilValue } from "recoil";
 import './productDetails.css'
 import cartDetaials from "../../Atoms/Cart.atom";
-import Footer from "../../Components/Footer/Footer";
-
+import DashboardNav from "../../Components/DashboardNav/DashboardNav";
 
 export default function ProductDetails({ id, img, title, desc, price }) {
     const { productId } = useParams()
@@ -59,6 +58,7 @@ export default function ProductDetails({ id, img, title, desc, price }) {
     }
     return (
         <>
+            <DashboardNav />
             <div className="container mt-5">
                 <div className="row">
                     <div className="col-md-12 col-lg-5">
@@ -90,7 +90,6 @@ export default function ProductDetails({ id, img, title, desc, price }) {
                     </div>
                 </div>
             </div>
-            <Footer />
         </>
     )
 }

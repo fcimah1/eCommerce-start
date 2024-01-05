@@ -15,7 +15,7 @@ export default function Login() {
         let config = {
             method: 'get',
             maxBodyLength: Infinity,
-            url: `https://api.escuelajs.co/api/v1/users/`,
+            url: `http://localhost:9000/users/`,
             headers: {}
         };
         try {
@@ -23,6 +23,7 @@ export default function Login() {
             await response.data.find(item => {
                 if (item.email === input) {
                     localStorage.setItem("userDetails", JSON.stringify(item))
+                    window.location.reload();
                 }
                 return null
             })
@@ -47,9 +48,9 @@ export default function Login() {
             toast.success("login successfully")
             setLoginState(true)
             getUserInfo(email.current.value)
+            console.log(loginState);
             localStorage.setItem("token", response.data.access_token)
-            localStorage.setItem("login", loginState)
-
+            localStorage.setItem("login", true)
         } catch (error) {
             toast.error(error);
         }

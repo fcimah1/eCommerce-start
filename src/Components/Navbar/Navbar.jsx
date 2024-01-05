@@ -63,11 +63,8 @@ export default function Navbar() {
                             <li className="nav-item">
                                 <p className="nav-link text-uppercase">
                                     {
-                                        user ?
-                                            "DEFAULT WELCOME MSG!" :
-                                            `welcome, ${user?.name}`
+                                        (typeof user.name === 'undefined') ? "DEFAULT WELCOME MSG!" : `Welcome, ${user.name}`
                                     }
-
                                 </p>
                             </li>
                             <li className="nav-item ">
@@ -84,6 +81,7 @@ export default function Navbar() {
                                                     setLoginState(false)
                                                     localStorage.setItem("login", false)
                                                     localStorage.removeItem("userDetails")
+                                                    window.location.reload();
                                                 }}>Sign Out</Link>
                                         </> :
                                         <>
@@ -160,9 +158,11 @@ export default function Navbar() {
                 <div className="d-flex align-items-center links px-3">
                     <div className="collapse navbar-collapse  align-items-center" id="navbarSupportedContent">
                         <ul className="navbar-nav">
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="/products">Dashboard</NavLink>
-                            </li>
+                            {(user.role === "Admin" &&
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/dashboard/dashboardProducts">Dashboard</NavLink>
+                                </li>
+                            )}
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/">Home</NavLink>
                             </li>
@@ -177,8 +177,8 @@ export default function Navbar() {
                                 </NavLink>
                             </li>
                             <li className="nav-item ">
-                                <NavLink className="nav-link " to="/services">
-                                    Services
+                                <NavLink className="nav-link " to="/blog">
+                                    Blog
                                 </NavLink>
                             </li>
 

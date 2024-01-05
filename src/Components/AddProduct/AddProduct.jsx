@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import DashboardNav from "../DashboardNav/DashboardNav";
 
 export default function AddProduct() {
     const [image, setImage] = useState([])
@@ -34,11 +35,12 @@ export default function AddProduct() {
 
     return (
         <>
+            <DashboardNav />
             <form className="container mt-5" onSubmit={(e) => handleSubmit(e)}>
                 <div className="mb-3">
                     <label htmlFor="inpTitle" className="form-label">Title</label>
                     <input name="title" type="text" className="form-control"
-                    required   id="inpTitle" />
+                        required id="inpTitle" />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="inpImage" className="form-label">Image</label>

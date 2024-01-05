@@ -6,7 +6,6 @@ import TopRated from '../../TopRated/TopRated';
 import NewArrivals from '../../Components/NewArrivals/NewArrivals';
 import SwipperSlides from '../../Components/SwipperSlides/SwipperSlides';
 import HomeBar from '../../Components/HomeBar/HomeBar';
-import Footer from '../../Components/Footer/Footer';
 
 export default function Home() {
     const [product, setProduct] = useState([])
@@ -39,7 +38,6 @@ export default function Home() {
             <SwipperSlides />
             <TopRated />
             <NewArrivals />
-            <Footer />
         </>
     )
 }

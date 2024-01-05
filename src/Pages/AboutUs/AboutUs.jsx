@@ -1,7 +1,6 @@
 
 import AboutCards from "../../Components/AboutCards/AboutCards"
 import Employers from "../../Components/Employers/Employers"
-import Footer from "../../Components/Footer/Footer"
 import "./about.css"
 export default function AboutUs() {
     return (
@@ -23,7 +22,6 @@ export default function AboutUs() {
             </div>
             <AboutCards />
             <Employers />
-            <Footer />
         </>
     )
 }

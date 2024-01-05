@@ -53,7 +53,8 @@ export default function SignUp() {
             name: `${firstName.current.value} ${lastName.current.value}`,
             email: email.current.value,
             password: password.current.value,
-            avatar: "https://picsum.photos/800"
+            avatar: "https://picsum.photos/800",
+            role:"customer"
         }
         const url = "https://api.escuelajs.co/api/v1/users/"
         console.log(arrOfEmails);
@@ -63,6 +64,7 @@ export default function SignUp() {
         } else {
             try {
                 const response = await axios.post(url, body);
+                await axios.post("http://localhost:9000/users", body);
                 (navigate('/'))
 
                 console.log(response.data);

@@ -13,7 +13,7 @@ export default function Categories() {
             {
                 category?.map((categ, id) => {
                     if (id < 12) {
-                        return (<li key={id}><Link key={id} className=" dropdown-item category" to={`category/${categ}`}>{categ}</Link></li>)
+                        return (<li key={id}><Link key={id} className=" dropdown-item category" to={`/category/${categ}`}>{categ}</Link></li>)
                     }return null
                 })
             }

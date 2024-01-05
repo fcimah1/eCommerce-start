@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import DashboardNav from "../DashboardNav/DashboardNav";
 
 export default function UpdateProduct() {
     const [product, setProduct] = useState([])
@@ -42,7 +43,7 @@ export default function UpdateProduct() {
         try {
             const res = await axios.put(`http://localhost:9000/products/${productId}`, obj)
             if (res) {
-                (navigate('/products'))
+                (navigate('/dashboard/dashboardProducts'))
             }
             console.log(res)
         } catch (error) {
@@ -63,6 +64,8 @@ export default function UpdateProduct() {
 
     return (
         <>
+            <DashboardNav />
+
             <form className="container mt-5" onSubmit={(e) => handleUpdate(e)}>
                 <div className="mb-3">
                     <label htmlFor="inpTitle" className="form-label">Title</label>

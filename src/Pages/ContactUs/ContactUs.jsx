@@ -7,7 +7,6 @@ import { useRecoilValue } from "recoil";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import $ from 'jquery';
-import Footer from "../../Components/Footer/Footer";
 export default function ContactUs() {
     const user = useRecoilValue(User)
 
@@ -89,7 +88,6 @@ export default function ContactUs() {
                     </div>
                 </div>
             </div>
-            <Footer/>
         </>
     )
 }

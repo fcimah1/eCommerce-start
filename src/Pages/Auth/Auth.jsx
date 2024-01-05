@@ -2,7 +2,6 @@ import { useState } from "react";
 import Login from "../../Components/Login/Login";
 import SignUp from "../../Components/SignUp/SignUp";
 import "./Auth.css";
-import Footer from "../../Components/Footer/Footer";
 export default function Auth() {
   const [logged, setLogged] = useState(true)
   return (
@@ -35,7 +34,6 @@ export default function Auth() {
             </>
         }
       </div>
-      <Footer />
     </>
   )
 }
