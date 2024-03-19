@@ -158,7 +158,7 @@ export default function Navbar() {
                 <div className="d-flex align-items-center links px-3">
                     <div className="collapse navbar-collapse  align-items-center" id="navbarSupportedContent">
                         <ul className="navbar-nav">
-                            {(user.role === "Admin" &&
+                            {(user.role === "admin" &&
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/dashboard/dashboardProducts">Dashboard</NavLink>
                                 </li>

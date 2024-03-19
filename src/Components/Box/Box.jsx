@@ -71,8 +71,6 @@ export default function Box({ id, img, title, desc, price }) {
     wishValues.map(prod =>  arrOfWishList.push(prod.id) )
     console.log(arrOfWishList);
 
-
-
     localStorage.setItem("cart", JSON.stringify(cart));
     localStorage.setItem("wishList", JSON.stringify(wish));
 
@@ -106,6 +104,5 @@ export default function Box({ id, img, title, desc, price }) {
                 </div>
             </div>
         </div>
-
     )
 }

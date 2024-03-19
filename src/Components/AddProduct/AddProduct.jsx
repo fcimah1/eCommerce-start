@@ -46,7 +46,8 @@ export default function AddProduct() {
                     <label htmlFor="inpImage" className="form-label">Image</label>
                     <input type="file" accept="image/*" required
                         className="form-control" id="inpImage"
-                        onChange={(e) => setImage(e.target.files[0])} />
+                        onChange={(e) => setImage(e.target.files[0])
+                        } />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="inpDescription" className="form-label">Description</label>

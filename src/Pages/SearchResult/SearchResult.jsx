@@ -6,22 +6,24 @@ export default function SearchResult() {
     const { value } = useParams()
     const [data, setData] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:9000/products/search?q=${value}`)
+        fetch(`https://dummyjson.com/products/search?q=${value}`)
             .then(res => res.json())
             .then(productData => setData(productData));
     }, [value])
+
     return (
         <>
             <h2 className="text-center head my-5">Search Result</h2>
             <div className="container">
-                {(data.length > 0) ?
+                {(data.products.length) ?
 
                     <div className="row">
                         {
-                            data.map(({ price, id, title, thumbnail, description }) => {
+                            data?.products?.map((product) => {
+                                console.log(product);
                                 return (
-                                    <div key={id} className="col-md-6 col-lg-4 col-xl-3 mb-3" >
-                                        <Box id={id} img={thumbnail} title={title} desc={description} price={price} />
+                                    <div key={product.id} className="col-md-6 col-lg-4 col-xl-3 mb-3" >
+                                        <Box id={product.id} img={product.thumbnail} title={product.title} desc={product.description} price={product.price} />
                                     </div>)
                             })
                         }
