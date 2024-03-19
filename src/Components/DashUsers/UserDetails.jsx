@@ -6,7 +6,7 @@ export default function UserDetails({ name, email, password, avatar, role, addre
     const { userId } = useParams()
     const [user, setUser] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:9000/users/${userId}`)
+        fetch(`https://dummyjson.com/users/${userId}`)
             .then(res => res.json())
             .then(data => setUser(data));
     }, [userId])

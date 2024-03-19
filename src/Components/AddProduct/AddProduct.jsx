@@ -24,7 +24,7 @@ export default function AddProduct() {
         let obj = Object.fromEntries(formData)
 
         try {
-            const res = await axios.post("http://localhost:9000/products", obj)
+            const res = await axios.post("https://dummyjson.com/products/add", obj)
                 (navigate('/products'))
             console.log(res)
         } catch (error) {

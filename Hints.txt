@@ -1,0 +1,2 @@
+to work with json server use this in terminal:
+        json-server --watch api.json --port 9000

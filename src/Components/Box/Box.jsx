@@ -14,7 +14,7 @@ export default function Box({ id, img, title, desc, price }) {
     const cartValues = useRecoilValue(cartDetaials)
     const [wish, setWish] = useRecoilState(wishListDetaials)
     const wishValues = useRecoilValue(wishListDetaials)
-
+    console.log(img);
 
     let productDetails = {
         id,
@@ -68,7 +68,7 @@ export default function Box({ id, img, title, desc, price }) {
     }
 
     let arrOfWishList = []
-    wishValues.map(prod =>  arrOfWishList.push(prod.id) )
+    wishValues.map(prod => arrOfWishList.push(prod.id))
     console.log(arrOfWishList);
 
     localStorage.setItem("cart", JSON.stringify(cart));

@@ -11,9 +11,9 @@ export default function DashboardOfProductView() {
     const [product, setProduct] = useState([])
 
     const getAllProducts = () => {
-        fetch('http://localhost:9000/products')
+        fetch('https://dummyjson.com/products')
             .then(res => res.json())
-            .then(data => setProduct(data))
+            .then(data => setProduct(data.products))
     }
 
     useEffect(() => {
@@ -39,7 +39,7 @@ export default function DashboardOfProductView() {
             reverseButtons: true
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:9000/products/${productId}`, {
+                fetch(`https://dummyjson.com/products/${productId}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

@@ -18,7 +18,7 @@ export default function AddUser() {
         let obj = Object.fromEntries(formData)
 
         try {
-            const res = await axios.post("http://localhost:9000/users", obj)
+            const res = await axios.post("https://dummyjson.com/users/add", obj)
                 (navigate('/dashboard/dashboardUsers'))
             console.log(res)
         } catch (error) {

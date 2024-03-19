@@ -34,7 +34,7 @@ export default function UpdateUser() {
         let obj = Object.fromEntries(formData)
         console.log(obj);
         try {
-            const res = await axios.put(`http://localhost:9000/users/${userId}`, obj)
+            const res = await axios.put(`https://dummyjson.com/users/${userId}`, obj)
             if (res) {
                 (navigate('/dashboard/dashboardUsers'))
             }

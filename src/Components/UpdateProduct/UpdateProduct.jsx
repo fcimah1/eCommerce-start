@@ -41,7 +41,7 @@ export default function UpdateProduct() {
         let obj = Object.fromEntries(formData)
         console.log(obj);
         try {
-            const res = await axios.put(`http://localhost:9000/products/${productId}`, obj)
+            const res = await axios.put(`https://dummyjson.com/products/${productId}`, obj)
             if (res) {
                 (navigate('/dashboard/dashboardProducts'))
             }
