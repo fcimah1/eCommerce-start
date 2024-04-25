@@ -9,7 +9,7 @@ export default function ProductDetails({ id, img, title, desc, price }) {
     const { productId } = useParams()
     const [product, setProduct] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:9000/products/${productId}`)
+        fetch(`https://dummyjson.com/products/${productId}`)
             .then(res => res.json())
             .then(data => setProduct(data));
     }, [productId])
