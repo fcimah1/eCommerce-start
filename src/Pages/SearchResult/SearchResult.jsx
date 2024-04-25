@@ -15,7 +15,7 @@ export default function SearchResult() {
         <>
             <h2 className="text-center head my-5">Search Result</h2>
             <div className="container">
-                {(data.products.length) ?
+                {(data?.products?.length) ?
 
                     <div className="row">
                         {
